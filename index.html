@@ -23,20 +23,34 @@
 
             <div class="col-sm-6 body">
                 <h1 class="text-center">Password Generator</h1>
+                
+                <div class="check row">
+                    <input type="checkbox" id="upB" class="check"> <p class="checkTxt"> uppercase letters<br></p>
+                </div>
+                
+                <div class="check row">
+                    <input type="checkbox" id="lowB" class="check"> <p class="checkTxt"> lowercase letters<br></p>
+                </div>
+                
+                <div class="check row">
+                    <input type="checkbox" id="numB" class="check"> <p class="checkTxt"> numbers<br></p>
+                </div>
+                
+                <div class="check row">
+                    <input type="checkbox" id="spcB" class="check"> <p class="checkTxt"> special characters<br></p>
+                </div>
 
-                <input type="checkbox" id="upB"> uppercase letters<br>
+                <div class="row">
+                    <p class="len">Length</p><input type="text" id="lenB" class="text-center" maxlength="2">
+                </div>
 
-                <input type="checkbox" id="lowB"> lowercase letters<br>
+                <div class="text-center">
+                    <button onclick="makeid(lenB.value)" class="gen"><p>generate</p></button><br>
+                </div>
 
-                <input type="checkbox" id="numB"> numbers<br>
+                <input type="text" id="passW" class="text-center" readonly>
 
-                <input type="checkbox" id="spcB"> special characters<br>
-
-                <p id="len">Length</p><input type="text" id="lenB"><br>
-
-                <button onclick="console.log(makeid(lenB.value))" class="gen"><p>generate</p></button><br>
-
-                <input type="text" id="passW">
+                <button class="copy" onclick="copy()">copy</button>
             </div>
 
             <div class="col-sm-3"></div>
@@ -47,6 +61,17 @@
     
 
     <script text="javascript">
+
+        function copy() {
+
+            var copyText = document.getElementById("passW");
+
+            copyText.select();
+
+            document.execCommand("copy");
+
+            alert("Copied the text: " + copyText.value);
+        }
         
         function makeid(length) {
             
