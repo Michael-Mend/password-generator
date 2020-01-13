@@ -45,12 +45,12 @@
                 </div>
 
                 <div class="text-center">
-                    <button onclick="makeid(lenB.value)" class="gen"><p>generate</p></button><br>
+                    <button onclick="newMakeId(lenB.value)" class="gen"><p>generate</p></button><br>
                 </div>
 
                 <input type="text" id="passW" class="text-center" readonly>
 
-                <button class="copy" onclick="copy()">copy</button>
+                <button id="copy_button" class="copy" onclick="copy()">copy</button>
             </div>
 
             <div class="col-sm-3"></div>
@@ -64,49 +64,54 @@
         function copy() {
 
             var copyText = document.getElementById("passW");
+            var btn = document.getElementById("copy_button");
 
             copyText.select();
 
             document.execCommand("copy");
 
-            alert("Copied the text: " + copyText.value);
+            btn.innerHTML = "copied";
+            
+            setTimeout(function() {
+            	btn.innerHTML = "copy";
+            }, 2000);
         }
         
-        function makeid(length) {
+        function getRandomInt(max) {
+  				return Math.floor(Math.random() * Math.floor(max));
+				}
+        
+        function newMakeId(length) {
+            var chars = "";
+            var result = "";
             
-            var alpX = '';
-            var alp = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            var alpLng = alp.length;
-
-            var alpLowX = '';
-            var alpLow = 'abcdefghijklmnopqrtuvwxyz';
-            
-            var spcX = '';
-            var spc = '!@#$%^&*()_';
-            var spcLng = spc.length;
-
-            var numX = '';
-
             var upB = document.getElementById('upB').checked;
             var lowB = document.getElementById('lowB').checked;
             var numB = document.getElementById('numB').checked;
             var spcB = document.getElementById('spcB').checked;
-
-            for ( var i = 0; i < length; i++ ) {
-                if (upB == true) {
-                    alpX += alp.charAt(Math.floor(Math.random() * alpLng));
-                } 
-                if (lowB == true) {
-                    alpLowX += alpLow.charAt(Math.floor(Math.random() * alpLng));
-                }
-                if (spcB == true) {
-                    spcX += spc.charAt(Math.floor(Math.random() * spcLng));
-                }
-                if (numB == true) {
-                    numX += (Math.floor(Math.random() * 10));
-                }
+            
+            if (upB) {
+                chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
             }
-            return document.getElementById("passW").value = alpX + alpLowX + spcX + numX;
+            
+            if (lowB) {
+                chars += 'abcdefghijklmnopqrtuvwxyz';
+            }
+            
+            if (numB) {
+                chars += '1234567890';
+            }
+            
+            if (spcB) {
+                chars += '!@#$%^&*()_';
+            }
+            
+            while (result.length < length) {
+                var randomIndex = getRandomInt(chars.length);
+            result += chars[randomIndex];
+            }
+
+            document.getElementById("passW").value = result;
         }
         
     </script>
