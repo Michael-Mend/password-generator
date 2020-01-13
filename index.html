@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>Password Generator</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm"><p class="hidden">#</p></div>
+        </div>
+
+        <div class="row">
+            
+            <div class="col-sm-3"></div>
+
+            <div class="col-sm-6">
+                <h1>Password Generator</h1>
+
+                <input type="checkbox" id="upB">uppercase letters<br>
+
+                <input type="checkbox" id="lowB">lowercase letters<br>
+
+                <input type="checkbox" id="numB">numbers<br>
+
+                <input type="checkbox" id="spcB">special characters<br>
+
+                Length<br><input type="text" id="lenB"><br>
+
+                <button onclick="console.log(makeid(lenB.value))" class="gen">generate</button>
+            </div>
+
+            <div class="col-sm-3"></div>
+
+        </div>
+
+    </div>
+    
+
+    <script text="javascript">
+        
+        function makeid(length) {
+            
+            var alpX = '';
+            var alp = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            var alpLng = alp.length;
+
+            var alpLowX = '';
+            var alpLow = 'abcdefghijklmnopqrtuvwxyz';
+            
+            var spcX = '';
+            var spc = '!@#$%^&*()_';
+            var spcLng = spc.length;
+
+            var numX = '';
+
+            var upB = document.getElementById('upB').checked;
+            var lowB = document.getElementById('lowB').checked;
+            var numB = document.getElementById('numB').checked;
+            var spcB = document.getElementById('spcB').checked;
+            var lenB = document.getElementById('lenB').value;
+
+
+            for ( var i = 0; i < length; i++ ) {
+                if (upB == true) {
+                    alpX += alp.charAt(Math.floor(Math.random() * alpLng));
+                }
+                if (lowB == true) {
+                    alpLowX += alpLow.charAt(Math.floor(Math.random() * alpLng));
+                }
+                if (spcB == true) {
+                    spcX += spc.charAt(Math.floor(Math.random() * spcLng));
+                }
+                if (numB == true) {
+                    numX += (Math.floor(Math.random() * 10));
+                }
+            }
+            return alpX + alpLowX + spcX + numX;
+        }
+        
+    </script>
+
+    
+</body>
+</html>
