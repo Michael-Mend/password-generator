@@ -1,10 +1,41 @@
 .hidden {
-    line-height: 3;
+    line-height: 6;
     visibility: hidden;
 }
 body {
     font-size: 20px;
 }
+.body {
+    background-color: rgb(184, 255, 255);
+    padding-bottom: 20px;
+    border-bottom: solid;
+    border-right: solid;
+    border-color: rgb(125, 155, 155);
+    border-radius: 10px;
+}
+input {
+    margin-bottom: 10px;
+}
+h1 {
+    margin-top: 10px;
+}
 .gen {
-    
+    margin-bottom: 10px;
+    line-height: .75;
+    padding-top: 10px;
+    border-radius: 10PX;
+    background-color: white;
+    border: none;
+    border-bottom: solid;
+    border-right: solid;
+    border-color: rgb(125, 155, 155);
+}
+p { 
+    font-weight: bold;
+}
+#len { 
+    margin-top: 10px; 
+}
+.hide {
+    visibility: hidden;
 }
