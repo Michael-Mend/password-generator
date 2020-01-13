@@ -56,7 +56,6 @@
             <div class="col-sm-3"></div>
 
         </div>
-
     </div>
     
 
@@ -92,13 +91,11 @@
             var lowB = document.getElementById('lowB').checked;
             var numB = document.getElementById('numB').checked;
             var spcB = document.getElementById('spcB').checked;
-            var lenB = document.getElementById('lenB').value;
-
 
             for ( var i = 0; i < length; i++ ) {
                 if (upB == true) {
                     alpX += alp.charAt(Math.floor(Math.random() * alpLng));
-                }
+                } 
                 if (lowB == true) {
                     alpLowX += alpLow.charAt(Math.floor(Math.random() * alpLng));
                 }
