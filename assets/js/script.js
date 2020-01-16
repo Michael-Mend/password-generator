@@ -50,3 +50,20 @@ function newMakeId(length) {
 
     document.getElementById("passW").value = result;
 }
+var themeSwitcher = document.querySelector("#themeSwitcher");
+var bgDark = document.querySelector(".bgDark");
+var bodyDark = document.querySelector(".bodyDark");
+var mode = "dark";
+
+themeSwitcher.addEventListener("click", function() {
+  if (mode === "dark") {
+    mode = "light";
+    bgDark.setAttribute("class", "");
+    bodyDark.setAttribute("class", "body col-sm-6");
+  }
+  else {
+    mode = "dark";
+    bgDark.setAttribute("class", "bgDark");
+    bodyDark.setAttribute("class", "bodyDark col-sm-6");
+  }
+});

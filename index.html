@@ -10,7 +10,7 @@
 
     <title>Password Generator</title>
 </head>
-<body>
+<body class="bgDark">
     <div class="container">
 
         <div class="row">
@@ -21,8 +21,28 @@
             
             <div class="col-sm-3"></div>
 
-            <div class="col-sm-6 body">
+            <div class="col-sm-6 bodyDark">
                 <h1 class="text-center">Password Generator</h1>
+
+                <div class="row">
+
+                    <div class="col-sm-6"></div>
+                    
+                    <div class="col-sm-2 swTxt">
+                      Dark Mode
+                    </div>
+                    
+                    <label class="switch col-sm-1">
+                      <input type="checkbox" id="themeSwitcher">
+                      <span class="slider round"></span>
+                    </label>
+                    
+                    <div class="col-sm-2 swTxt">
+                      Light Mode
+                    </div>
+
+                    <div class="col-sm-1"></div>
+                </div>
                 
                 <div class="check row">
                     <input type="checkbox" id="upB" class="check"> <p class="checkTxt"> uppercase letters<br></p>
@@ -57,14 +77,6 @@
 
         </div>
     </div>
-    
-
     <script src="./assets/js/script.js"></script>
-
-
-        
-        
-    
-    
 </body>
 </html>
