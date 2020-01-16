@@ -192,4 +192,18 @@ input {
     .hidden {
         display: none;
     }
+    .slider {
+        margin-left: 30px;
+    }
+    .switch {
+        padding-right: 40px;
+        position: relative;
+        top: 5px;
+        margin-bottom: 10px;
+    }
+    #themeSwitcher:checked + .slider:before {
+        -webkit-transform: translateX(9px);
+        -ms-transform: translateX(9px);
+        transform: translateX(9px);
+    }
 }
