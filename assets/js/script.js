@@ -42,13 +42,23 @@ function newMakeId(length) {
     if (spcB) {
         chars += '!@#$%^&*()_';
     }
-    
+
     while (result.length < length) {
         var randomIndex = getRandomInt(chars.length);
     result += chars[randomIndex];
     }
 
     document.getElementById("passW").value = result;
+
+    if (spcB != true && upB != true && lowB != true && numB != true) {
+        alert("you must select at least one option");
+        document.getElementById("passW").value = " ";
+    }
+
+    if (length < 8 || length > 128){
+        alert("password must be between 8 and 128 characters");
+        document.getElementById("passW").value = " ";
+    }
 }
 var themeSwitcher = document.querySelector("#themeSwitcher");
 var bgDark = document.querySelector(".bgDark");
