@@ -63,6 +63,7 @@ function newMakeId(length) {
 var themeSwitcher = document.querySelector("#themeSwitcher");
 var bgDark = document.querySelector(".bgDark");
 var bodyDark = document.querySelector(".bodyDark");
+var copyDark = document.querySelector(".copyDark")
 var mode = "dark";
 
 themeSwitcher.addEventListener("click", function() {
@@ -70,10 +71,12 @@ themeSwitcher.addEventListener("click", function() {
     mode = "light";
     bgDark.setAttribute("class", "");
     bodyDark.setAttribute("class", "body col-sm-6");
+    copyDark.setAttribute("class", "copy")
   }
   else {
     mode = "dark";
     bgDark.setAttribute("class", "bgDark");
     bodyDark.setAttribute("class", "bodyDark col-sm-6");
+    copyDark.setAttribute("class", "copyDark")
   }
 });

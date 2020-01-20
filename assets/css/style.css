@@ -62,6 +62,16 @@ input {
     position: relative;
     color: rgb(102, 99, 87);
 }
+.copyDark {
+    border: none;
+    background: none;
+    font-size: 12px;
+    margin-left: 30px;
+    padding-top: -20px;
+    bottom: 10px;
+    position: relative;
+    color: white;
+}
 .copy:focus {
     outline: none;
 }
