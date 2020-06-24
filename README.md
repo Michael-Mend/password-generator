@@ -16,4 +16,4 @@ The user is interfaced with a form that allows them to select between a multitud
  ## Technology 
   This app is using vanilla JS, html and css.
  
- Try the app [herr](https://michael-mend.github.io/password-generator/)
+ Try the app [here](https://michael-mend.github.io/password-generator/)
